@@ -3,10 +3,10 @@ function json(url) {
   return JSON.parse(jsondata.getContentText());
 }
 
-function CALLINT(value) {
+function CALLINT(value, formatting) {
   const params = value.split('.')
 
-  let result = 'Unavailable'
+  let result = ''
   for (let i = 0; i < params.length; i++) {
     const param = params[i]
 
@@ -32,5 +32,14 @@ function CALLINT(value) {
       result = result[param]
     }
   }
+
+  if(formatting) {
+    let options = {}
+    if(formatting === 'usd') {
+      options = { ...options, style: 'currency', currency: 'USD' }
+    }
+    return new Intl.NumberFormat('en-US', options).format(+result)
+  }
+
   return result
 }
