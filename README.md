@@ -2,9 +2,9 @@
 
 Web3 sheets functions written in Google Apps Script for Google Sheets
 
-| Function name | Arguments                                | Return value                                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                
-|---------------|------------------------------------------|----------------------------------------------|
-| CALLINT       | Request cell coordinates (example: `A2`) | Result of processing request from given cell |
+| Name    | Arguments                                | Return value                      |                                                                                                                                                                                                                                                                                                                                                                                                                                                
+|---------|------------------------------------------|-----------------------------------|
+| CALLINT | Request cell coordinates (example: `A2`) | Result of request from given cell |
 
 ### How to use it
 1) Add JSON url to table cell (for example, in `A1`)
