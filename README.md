@@ -7,7 +7,7 @@ Web3 sheets functions written in Google Apps Script for Google Sheets
 | CALLINT       | Request cell coordinates (example: `A2`) | Result of processing request from given cell |
 
 ### How to use it
-1) Add JSON url to A1
+1) Add JSON url to table cell (for example, in `A1`)
 ```shell
 https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?start=1&limit=150&convert=USD&CMC_PRO_API_KEY=<API_KEY>
 ```
@@ -15,10 +15,12 @@ https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?start=1&limi
 ```shell
 json(A1).status.total_count
 ```
-3) Call request from another cell
+3) Call request from another cell (for example, in `B2`)
 ```shell
 =CALLINT(A2)
 ```
+
+Result will be displayed in `B2`.
 
 ### Examples of requests
 #### Nested object
@@ -37,4 +39,6 @@ json(A1).data.7.name
 ```
 
 #### Display array elements
+```shell
 json(A1).data.7.tags
+```
