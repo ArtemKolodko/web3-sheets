@@ -1,6 +1,6 @@
-### Web3 Sheets functions
+### Web3 Sheets
 
-Web3 sheets functions written in Google Apps Script for Google Sheets
+Web3 sheet functions written in Google Apps Script for Google Sheets
 
 | Name    | Arguments                                | Return value                      |                                                                                                                                                                                                                                                                                                                                                                                                                                                
 |---------|------------------------------------------|-----------------------------------|
