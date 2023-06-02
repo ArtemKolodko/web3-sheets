@@ -10,7 +10,13 @@ function CALLINT(value, formatting) {
   for (let i = 0; i < params.length; i++) {
     const param = params[i]
 
-    if(param.startsWith("json")) {
+    // Read data from another cell
+    // Recursively call cell value and go to the next param
+    if(param && /^(?<column>[A-Z]+)(?<row>[1-9]\d*)$/gi.test(param)) {
+      const cellValue = SpreadsheetApp.getActiveSheet().getRange(param).getValue()
+      result = CALLINT(cellValue)
+      continue
+    } else if(param.startsWith("json")) {
       const [, cellCoordinates] = param.split(/[()]/)
       const cellValue = SpreadsheetApp.getActiveSheet().getRange(cellCoordinates).getValue();
       result = json(cellValue)
